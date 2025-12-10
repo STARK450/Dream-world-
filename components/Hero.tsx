@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         {/* TO CHANGE HERO IMAGE: Update the src below */}
         <img
-          src="https://picsum.photos/id/433/1920/1080"
+          src="https://drive.google.com/thumbnail?id=19CjWpe-am7TLBq2n56rxq7UUWkEBYp28&sz=w2000"
           alt="Studio Background"
           className="w-full h-full object-cover"
         />

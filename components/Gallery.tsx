@@ -14,7 +14,7 @@ const galleryImages = [
     url: "https://drive.google.com/thumbnail?id=1VKEswQ5VHRaHAr5K18h04pVEy68NG577&sz=w1000", 
     title: "Wedding Bliss" 
   },
-  { id: 2, url: "https://picsum.photos/id/1027/600/600", title: "Portrait Mode" },
+  { id: 2, url: "https://drive.google.com/thumbnail?id=1bPs0BC7KEUIHElhmmhSG_VlqW_14p7Fa&sz=w2000", title: "Portrait Mode" },
   { id: 3, url: "https://drive.google.com/thumbnail?id=1WKDIwbAwXt9ybL3OaUiOBvE9kcX117Kb&sz=w2000", title: "Nature & Love" },
   { id: 4, url: "https://drive.google.com/thumbnail?id=15rGM_xWThY9ABw2qcPgisy4C3RtVlR5L&sz=w2000", title: "Baby & Kids" },
   { id: 5, url: "https://drive.google.com/thumbnail?id=1LG98T959_pyoH0BLXf33DMOb1Bl0EWva&sz=w2000", title: "Candid Moments" },

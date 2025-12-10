@@ -12,7 +12,7 @@ export const About: React.FC = () => {
             <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl">
               {/* TO CHANGE ABOUT IMAGE: Update the src below */}
               <img 
-                src="https://picsum.photos/id/338/800/1000" 
+                src="https://drive.google.com/thumbnail?id=1ahICbpFWXVTWgLkMkvUEdHkbn3z58Saa&sz=w2000" 
                 alt="Photographer at work" 
                 className="w-full h-auto object-cover"
               />

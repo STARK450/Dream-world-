@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Camera, Instagram } from 'lucide-react';
+import { Menu, X, Instagram } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +23,15 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center gap-8 md:gap-12">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 group shrink-0">
-          <div className={`p-2 rounded-full border-2 transition-colors ${scrolled ? 'border-brand-gold text-brand-gold' : 'border-white text-white'}`}>
-            <Camera size={24} />
-          </div>
+        <a href="#home" className="flex items-center gap-3 group shrink-0">
+          <img 
+            src="https://drive.google.com/thumbnail?id=19APh53WgUUB3ZhYS5p8f7tu8CZzLUF5g&sz=w2000" 
+            alt="Dream World Studio Logo" 
+            className="h-12 w-auto object-contain rounded-full border-2 border-transparent"
+          />
           <div className="flex flex-col">
             <span className={`text-xl md:text-2xl font-bold tracking-wider ${scrolled ? 'text-brand-dark' : 'text-white'}`}>
               DREAM WORLD

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Facebook, Youtube, Camera } from 'lucide-react';
+import { Instagram, Facebook, Youtube } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -9,10 +9,12 @@ export const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="flex flex-col items-start">
-             <div className="flex items-center gap-2 mb-4">
-              <div className="p-1 rounded-full border border-brand-gold text-brand-gold">
-                <Camera size={20} />
-              </div>
+             <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="https://drive.google.com/thumbnail?id=19APh53WgUUB3ZhYS5p8f7tu8CZzLUF5g&sz=w2000" 
+                alt="Dream World Studio Logo" 
+                className="h-10 w-auto rounded-full"
+              />
               <span className="text-xl font-bold tracking-wider text-white">
                 DREAM WORLD
               </span>
