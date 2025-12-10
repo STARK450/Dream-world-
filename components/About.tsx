@@ -10,6 +10,7 @@ export const About: React.FC = () => {
           {/* Image Side */}
           <div className="w-full md:w-1/2 relative">
             <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl">
+              {/* TO CHANGE ABOUT IMAGE: Update the src below */}
               <img 
                 src="https://picsum.photos/id/338/800/1000" 
                 alt="Photographer at work" 

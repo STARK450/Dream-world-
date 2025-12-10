@@ -21,7 +21,12 @@ export const Footer: React.FC = () => {
               Capturing moments, creating memories. We are dedicated to turning your special days into timeless art.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-colors">
+              <a 
+                href="https://www.instagram.com/dreamworldstudio_kakinada?igsh=MXJpaHlyOGFoaHdmbg==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-colors"
+              >
                 <Instagram size={20} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-colors">

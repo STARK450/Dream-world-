@@ -140,28 +140,40 @@ export const Contact: React.FC = () => {
                    <MapPin className="text-brand-gold mt-1" />
                    <div>
                      <h4 className="font-semibold text-lg">Location</h4>
-                     <p className="text-gray-400">123 Creative Avenue, Art District<br/>City Center, State 500001</p>
+                     <a 
+                       href="https://maps.app.goo.gl/3tZPtYHubmjUGBgF9" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       className="text-gray-400 hover:text-brand-gold transition-colors block"
+                     >
+                       Dream World Studio<br/>
+                       Kakinada, Andhra Pradesh
+                     </a>
                    </div>
                  </div>
                  <div className="flex items-start gap-4">
                    <Phone className="text-brand-gold mt-1" />
                    <div>
                      <h4 className="font-semibold text-lg">Phone</h4>
-                     <p className="text-gray-400">+1 (555) 123-4567</p>
+                     <a href="tel:+919705252424" className="text-gray-400 hover:text-brand-gold transition-colors">
+                       +91 97052 52424
+                     </a>
                    </div>
                  </div>
                  <div className="flex items-start gap-4">
                    <Mail className="text-brand-gold mt-1" />
                    <div>
                      <h4 className="font-semibold text-lg">Email</h4>
-                     <p className="text-gray-400">hello@dreamworldstudio.com</p>
+                     <a href="mailto:hello@dreamworldstudio.com" className="text-gray-400 hover:text-brand-gold transition-colors">
+                       hello@dreamworldstudio.com
+                     </a>
                    </div>
                  </div>
                  <div className="flex items-start gap-4">
                    <Clock className="text-brand-gold mt-1" />
                    <div>
                      <h4 className="font-semibold text-lg">Hours</h4>
-                     <p className="text-gray-400">Mon - Sat: 10:00 AM - 7:00 PM<br/>Sun: By Appointment Only</p>
+                     <p className="text-gray-400">Mon - Sat: 10:00 AM - 9:00 PM<br/>Sun: By Appointment Only</p>
                    </div>
                  </div>
               </div>
@@ -171,7 +183,7 @@ export const Contact: React.FC = () => {
             <div className="w-full h-64 bg-gray-800 rounded-lg overflow-hidden relative border border-gray-700">
                <iframe 
                 title="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1sen!2sus!4v1510579767645" 
+                src="https://maps.google.com/maps?q=Dream%20World%20Studio%20Kakinada&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%" 
                 height="100%" 
                 style={{border:0, filter: 'grayscale(1) contrast(1.2) opacity(0.7)'}} 

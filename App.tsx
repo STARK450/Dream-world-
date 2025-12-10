@@ -9,6 +9,7 @@ import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
+import { InstagramPreview } from './components/InstagramPreview';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Gallery />
         <Pricing />
         <Testimonials />
+        <InstagramPreview />
         <Contact />
       </main>
       <Footer />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Camera } from 'lucide-react';
+import { Menu, X, Camera, Instagram } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,9 +24,9 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-4' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
+      <div className="container mx-auto px-4 md:px-8 flex justify-between items-center gap-8 md:gap-12">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 group">
+        <a href="#home" className="flex items-center gap-2 group shrink-0">
           <div className={`p-2 rounded-full border-2 transition-colors ${scrolled ? 'border-brand-gold text-brand-gold' : 'border-white text-white'}`}>
             <Camera size={24} />
           </div>
@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 items-center">
+        <div className="hidden md:flex space-x-10 items-center">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -51,6 +51,18 @@ export const Navbar: React.FC = () => {
               {link.name}
             </a>
           ))}
+          
+          {/* Social Icon */}
+          <a 
+            href="https://www.instagram.com/dreamworldstudio_kakinada?igsh=MXJpaHlyOGFoaHdmbg==" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`transition-colors hover:scale-110 transform duration-200 ${scrolled ? 'text-brand-dark hover:text-brand-gold' : 'text-white hover:text-brand-gold'}`}
+            aria-label="Instagram"
+          >
+            <Instagram size={20} />
+          </a>
+
           <a 
             href="#contact"
             className={`px-5 py-2 rounded-full text-sm font-semibold transition-transform hover:scale-105 ${scrolled ? 'bg-brand-gold text-white' : 'bg-white text-brand-dark'}`}

@@ -6,6 +6,7 @@ export const Hero: React.FC = () => {
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
+        {/* TO CHANGE HERO IMAGE: Update the src below */}
         <img
           src="https://picsum.photos/id/433/1920/1080"
           alt="Studio Background"

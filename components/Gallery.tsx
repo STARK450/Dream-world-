@@ -1,26 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
+// ==========================================
+// TO CHANGE IMAGES:
+// Replace the 'url' values below with your own image URLs.
+// You can use links from Unsplash, or import local images.
+// ==========================================
 const galleryImages = [
-  { id: 1, url: "https://picsum.photos/id/1011/600/800", title: "Wedding Bliss" },
+  { 
+    id: 1, 
+    // Using Google Drive Thumbnail API for better reliability in img tags
+    // ID: 1VKEswQ5VHRaHAr5K18h04pVEy68NG577
+    url: "https://drive.google.com/thumbnail?id=1VKEswQ5VHRaHAr5K18h04pVEy68NG577&sz=w1000", 
+    title: "Wedding Bliss" 
+  },
   { id: 2, url: "https://picsum.photos/id/1027/600/600", title: "Portrait Mode" },
-  { id: 3, url: "https://picsum.photos/id/823/600/800", title: "Nature & Love" },
-  { id: 4, url: "https://picsum.photos/id/349/600/600", title: "Urban Style" },
-  { id: 5, url: "https://picsum.photos/id/64/600/800", title: "Candid Moments" },
+  { id: 3, url: "https://drive.google.com/thumbnail?id=1WKDIwbAwXt9ybL3OaUiOBvE9kcX117Kb&sz=w2000", title: "Nature & Love" },
+  { id: 4, url: "https://drive.google.com/thumbnail?id=15rGM_xWThY9ABw2qcPgisy4C3RtVlR5L&sz=w2000", title: "Baby & Kids" },
+  { id: 5, url: "https://drive.google.com/thumbnail?id=1LG98T959_pyoH0BLXf33DMOb1Bl0EWva&sz=w2000", title: "Candid Moments" },
   { id: 6, url: "https://picsum.photos/id/250/600/600", title: "Studio Art" },
 ];
 
 export const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
 
+  // Close lightbox on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    };
+
+    if (selectedImage) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
+
   const openLightbox = (img: typeof galleryImages[0]) => {
     setSelectedImage(img);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling background
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto'; // Restore scrolling
   };
 
   return (
@@ -38,18 +63,21 @@ export const Gallery: React.FC = () => {
           {galleryImages.map((img) => (
             <div 
               key={img.id} 
-              className="relative group overflow-hidden rounded-lg cursor-pointer"
+              className="relative group overflow-hidden rounded-lg cursor-pointer shadow-md hover:shadow-xl transition-all"
               onClick={() => openLightbox(img)}
             >
               <img
                 src={img.url}
                 alt={img.title}
-                className="w-full h-80 object-cover transform transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-80 object-cover transform transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <h3 className="text-white text-xl font-serif font-medium border-b-2 border-brand-gold pb-1">
-                  {img.title}
-                </h3>
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-white text-xl font-serif font-medium border-b-2 border-brand-gold pb-1 inline-block">
+                    {img.title}
+                  </h3>
+                  <p className="text-gray-200 text-sm mt-2 text-center">Click to view</p>
+                </div>
               </div>
             </div>
           ))}
@@ -65,26 +93,27 @@ export const Gallery: React.FC = () => {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
           onClick={closeLightbox}
         >
           <button 
             onClick={closeLightbox}
-            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
+            aria-label="Close"
           >
-            <X size={40} />
+            <X size={32} />
           </button>
           
           <div 
-            className="flex flex-col items-center max-w-5xl w-full"
+            className="flex flex-col items-center max-w-6xl w-full max-h-screen"
             onClick={(e) => e.stopPropagation()}
           >
             <img 
               src={selectedImage.url} 
               alt={selectedImage.title}
-              className="max-h-[80vh] max-w-full object-contain rounded-sm shadow-2xl"
+              className="max-h-[85vh] max-w-full object-contain rounded shadow-2xl"
             />
-            <h3 className="text-white text-2xl font-serif mt-6 font-medium tracking-wide">
+            <h3 className="text-white text-2xl font-serif mt-4 font-medium tracking-wide">
               {selectedImage.title}
             </h3>
           </div>
